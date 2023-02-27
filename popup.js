@@ -1,3 +1,14 @@
+const ratingColor = (value) => {
+
+  if (value > 66) {
+    return "#8BDCFF";
+  } else if (value > 33) {
+    return "#FFD18B";
+  } else {
+    return "#FF6C6C";
+  }
+}
+
 chrome.tabs.query({ active: true }).then((tabs) => getProfile(tabs));
 
 const getProfile = (tabs) => {
@@ -5,8 +16,9 @@ const getProfile = (tabs) => {
   const url = tabs[0].url;
   getProfileData(url).then((profile) => {
     if (profile != '') {
+      div.style.color = ratingColor(profile.value);
       div.innerHTML = `${profile.value}`;
-      document.getElementById('header').addEventListener('click', () => {redirect(profile.name)});
+      document.getElementById('header').addEventListener('click', () => { redirect(profile.name) });
     } else {
       div.innerHTML = `failed`
     }
