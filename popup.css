@@ -8,6 +8,31 @@
   font-size: 16px;
 }
 
+.insightContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  max-width: 5rem;
+  background-color: #f8f8f8;
+  padding: 0.5rem;
+  border-radius: 14px;
+}
+
+.insightContainer p {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #9c9c9c;
+  text-align: center;
+}
+
+.insightsContainer {
+  display: flex;
+  gap: 0.3rem;
+  margin: 0.4rem auto;
+}
+
 .headerContainer {
   display: flex;
   justify-content: space-between;
@@ -100,6 +125,18 @@
 .insights p {
   color: #c8c8c8;
 }
+
+.noInsights {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.noInsights p {
+  color: #c8c8c8;
+}
+
 
 ul {
   list-style-type: none;
