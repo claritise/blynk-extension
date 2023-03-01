@@ -35,12 +35,12 @@ const Insights = ({ profile }) => {
 }
 
 const getProfile = (tabs) => {
-  const div = document.getElementById('value');
+  const root = document.getElementById('value');
   const url = tabs[0].url;
   getProfileData(url).then((profile) => {
     if (profile != '') {
-      div.style.color = ratingColor(profile.value);
-      div.innerHTML = profile.ratings && profile.ratings.length ? `${profile.value}` : "—";
+      root.style.color = ratingColor(profile.value);
+      root.innerHTML = profile.ratings && profile.ratings.length ? `${profile.value}` : "—";
 
       const noInsights = document.createElement('div');
       noInsights.classList.add("noInsights");
@@ -60,7 +60,7 @@ const getProfile = (tabs) => {
 
       document.getElementById('header').addEventListener('click', () => { redirect(profile.name) });
     } else {
-      div.innerHTML = `failed`
+      root.innerHTML = `failed`
     }
   });
 }
