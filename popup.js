@@ -60,7 +60,7 @@ const getProfile = (tabs) => {
 
       document.getElementById('header').addEventListener('click', () => { redirect(profile.name) });
     } else {
-      root.innerHTML = `failed`
+      root.innerHTML = `failed, please retry later`
     }
   });
 }
