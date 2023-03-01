@@ -115,17 +115,6 @@
   color: #8bdcff;
 }
 
-.insights {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2.5rem;
-}
-
-.insights p {
-  color: #c8c8c8;
-}
-
 .noInsights {
   display: flex;
   align-items: center;
@@ -136,7 +125,6 @@
 .noInsights p {
   color: #c8c8c8;
 }
-
 
 ul {
   list-style-type: none;

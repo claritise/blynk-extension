@@ -1,5 +1,4 @@
 const ratingColor = (value) => {
-
   if (value > 66) {
     return "#8BDCFF";
   } else if (value > 33) {
@@ -9,15 +8,13 @@ const ratingColor = (value) => {
   }
 }
 
-chrome.tabs.query({ active: true }).then((tabs) => getProfile(tabs));
-
-function Insight({ icon, text }) {
+const Insight = ({ icon, text }) => {
   const container = document.createElement('div');
   container.classList.add("insightContainer");
 
   const image = new Image(40, 40);
   image.src = icon;
-  image.alt = "Picture of the author";
+  image.alt = "Verified";
 
   const paragraph = document.createElement('p');
   paragraph.innerText = text;
@@ -27,7 +24,7 @@ function Insight({ icon, text }) {
   return container;
 }
 
-function Insights({ profile }) {
+const Insights = ({ profile }) => {
   const insights = [];
 
   if (profile && profile.verified) {
@@ -85,7 +82,9 @@ const getProfileData = async (url) => {
 
 const b64EncodeUnicode = (str) => {
   return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
-    (match, p1) => {
-      return String.fromCharCode('0x' + p1);
+    (match, encoded) => {
+      return String.fromCharCode('0x' + encoded);
     }));
 }
+
+chrome.tabs.query({ active: true }).then((tabs) => getProfile(tabs));

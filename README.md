@@ -1,3 +1,5 @@
+[**WIP**]
+
 ## blynk-extension
 
 This browser extension will allow you to more easily access the [blynk](https://www.blynk.info) trust platform, allowing you to see the rating of the current website you are using with a single click. 
