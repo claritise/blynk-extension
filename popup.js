@@ -40,7 +40,7 @@ const getProfile = (tabs) => {
   getProfileData(url).then((profile) => {
     if (profile != '') {
       root.style.color = ratingColor(profile.value);
-      root.innerHTML = profile.ratings && profile.ratings.length ? `${profile.value}` : "—";
+      root.innerHTML = profile.ratings && profile.ratings.length ? `${profile.value}` : "50";
 
       const noInsights = document.createElement('div');
       noInsights.classList.add("noInsights");
